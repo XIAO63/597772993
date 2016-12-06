@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.cls{
+				border: 1px solid red;
+				text-align: center;
+				margin: 0;
+				list-style: none;
+				padding: 0;
+				width: 200px;
+				background: cyan;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<button onclick="test()">创建</button>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+		var iscreat=true;
+		
+			function test() {
+				if(iscreat){
+				var box=document.getElementById('box');
+				var ul =document.createElement('ul');
+				console.log(ul);
+				box.appendChild(ul);
+				var Arry=['苹果','三星','小米','诺基亚','华为','苹果','苹果'];
+				
+				 for (var i = 0; i <Arry.length; i++) {
+				 	var li=document.createElement('li');
+				 	ul.appendChild(li);
+				 	li.innerText=Arry[i];
+				 	li.className='cls';
+				 	if(i%2==0){
+				 		li.style.backgroundColor='red'
+				 	}else{
+				 		li.style.backgroundColor='blue'
+				 	}
+				 	var bg;
+				 	li.onmouseover=function  () {
+				 		bg=this.style.backgroundColor;
+				 		this.style.backgroundColor='white'
+				 	}
+				 	li.onmouseout=function  () {
+				 		this.style.backgroundColor=bg;
+				 	}
+				} 
+			}
+			iscreat=false;
+		}
+		</script>
+	</body>
+</html>
